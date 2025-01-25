@@ -1,6 +1,8 @@
 # test_app.py
 import pytest
-from app import app  # Import your Flask app
+from simple_flask_app.app import app
+
+ # Import your Flask app
 
 # Test the homepage route
 def test_homepage():
