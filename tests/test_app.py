@@ -1,6 +1,6 @@
 # test_app.py
 import pytest
-from Simple_flask_app.app import app # Import your Flask app
+from Simple-flask-app.app import app # Import your Flask app
 
  
 

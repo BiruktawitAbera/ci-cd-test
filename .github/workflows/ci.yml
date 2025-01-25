@@ -13,28 +13,28 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       # Step to checkout code
       - name: Checkout code
         uses: actions/checkout@v2
-        
+
       # Step to set up Python
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8'  # You can adjust the Python version if needed
+          python-version: '3.8'
 
       # Step to install dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install pytest  # Install pytest here
+
+      # Step to set PYTHONPATH
+      - name: Set PYTHONPATH
+        run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)" >> $GITHUB_ENV
 
       # Step to run tests
       - name: Run tests
-        run: |
-          pytest  # Run tests using pytest
-
-  # Add other jobs (Static and Dynamic Analysis) if needed
+        run: pytest
