@@ -1,6 +1,10 @@
-# test_app.py
+# # test_app.py
+# import sys
+# import os
+# sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import pytest
-from Simple-flask-app.app import app # Import your Flask app
+from Simple_flask_app import app# Import your Flask app
 
  
 
