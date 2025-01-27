@@ -35,6 +35,10 @@ jobs:
       - name: Set PYTHONPATH
         run: echo "PYTHONPATH=$(pwd)" >> $GITHUB_ENV
 
-      # Step to run tests
+
+  test: 
+    runs-on: ubuntu-latest
+    needs: build 
+    steps:
       - name: Run tests
-        run: pytest
+        run: pytest 
